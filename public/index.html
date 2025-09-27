@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seif Products</title>
+  <style>
+
+    
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background: #111;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: url('https://images.unsplash.com/photo-1508923567004-3a6b8004f3d5?fit=crop&w=1600&q=80') center/cover no-repeat;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.content h1 {
+  margin-top: 20%;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+/* Door Panels */
+.door {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  transition: transform 2.5s cubic-bezier(0.77,0,0.175,1);
+}
+
+.panel {
+  flex: 1;
+  background:
+    repeating-linear-gradient(90deg, #666 0px, rgb(77, 76, 76) 2px, #666 4px), /* texture */
+    linear-gradient(135deg, #777, #444, #888, #333),                 /* shading */
+    linear-gradient(to left, rgba(255,255,255,0.2) 10%, transparent 30%),  /* left reflection */
+    linear-gradient(to right, rgb(192, 192, 190,0.2) 10%, transparent 50%); /* right reflection */
+  background-blend-mode: overlay;
+  position: relative;
+  overflow: hidden;
+  transition: transform 2.5s cubic-bezier(0.77,0,0.175,1);
+  background-size: 200% 100%;
+}
+
+/* Odd panels animation */
+.panel:nth-child(odd) {
+  animation: moveShineOdd 40s linear infinite;
+}
+
+/* Even panels animation */
+.panel:nth-child(even) {
+  animation: moveShineEven 40s linear infinite;
+}
+
+/* Odd panels keyframes */
+@keyframes moveShineOdd {
+  0% { background-position: 0 0; }
+  50% { background-position: 100% 0; }
+  100% { background-position: 0 0; }
+}
+
+/* Even panels keyframes */
+@keyframes moveShineEven {
+  0% { background-position: 100% 0; }
+  50% { background-position: 0 0; }
+  100% { background-position: 100% 0; }
+}
+
+/* Mesh overlay for metallic texture */
+.panel::after {
+  content: "";
+  position: absolute;
+  top:0; left:0;
+  width: 100%; height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(75, 74, 74, 0.3) 0px,
+    rgba(0,0,0,0.3) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  pointer-events: none;
+}
+
+/* Clip paths (optional) */
+.panel:nth-child(odd) {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.panel:nth-child(even) {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Doors open animation */
+.doors-open .door {
+  transform: translateY(-100%);
+}
+    body {
+      font-family: Arial, sans-serif;
+      background: #888b8a;
+     
+    }
+    input {
+      display: block;
+      margin-bottom: 10px;
+      padding: 8px;
+      width: 250px;
+      border: 1px solid #02848d;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    button {
+      padding: 10px 15px;
+      font-size: 14px;
+      background: #1d344d;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #898c91;
+    }
+    
+    .form-container {
+  padding: 20px;
+  background: #888b8a;
+  position: relative; /* ensure it's under the door */
+  z-index: 1;
+}
+
+  </style>
+</head>
+<body>
+  
+  <div class="door">
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+    <div class="panel"></div>
+  </div>
+  <div class="form-container">
+  <h1>Calc My Stuff</h1>
+  <input id="productName" placeholder="Product Name" type="text" />
+  <input id="Price" placeholder="Price" type="number" />
+  <input id="quantity" placeholder="Quantity" type="number" />
+  <button id="addBtn">Add Product</button>
+  <ul id="productList"></ul>
+</div>
+
+  <br><br>
+ 
+  
+
+  <script src="js.js">
+  </script>
+</body>
+</html>
