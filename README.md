@@ -1,31 +1,33 @@
-📌 Project Description
+Calc My Stuff 🛒
 
-What the project is
-A simple product calculator web app 
+A simple product calculator web app with a stylish door-opening animation.
+
+Live Demo
+
+Try it live here on this link ==>  : https://my-webpage-production.up.railway.app/
 
 What it does
 
-Lets you add products with a name, price, and quantity.
+Add products with a name, price, and quantity
 
-Automatically calculates the total price.
+Automatically calculates the total price
 
-Displays all added products in a list.
+Displays all added products in a list
 
-Stores data temporarily on the server.
+Stylish door-opening CSS animation
 
-Technologies used
+Technologies Used
 
 Node.js + Express.js (backend & API)
 
 HTML, CSS, JavaScript (frontend)
 
-Why it’s useful / what I practiced
-This project helped me practice:
+Why it’s useful / What I practiced
 
-Building a basic Express server with routes (GET & POST).
+Built a basic Express server with GET & POST routes
 
-Using fetch API for client-server communication.
+Used fetch API for client-server communication
 
-DOM manipulation and form handling in JavaScript.
+Practiced DOM manipulation and form handling
 
-Adding creative CSS animations for better UI/UX.
+Implemented creative CSS animations for a better UI
